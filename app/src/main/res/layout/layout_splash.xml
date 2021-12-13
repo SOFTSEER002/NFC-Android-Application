@@ -16,17 +16,17 @@
         />
 
     <TextView
-        android:id="@+id/ordinance_s"
-        android:layout_width="329dp"
-        android:layout_height="47dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="42dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="487dp"
-        android:text="@string/ordinance_s"
-        android:textAppearance="@style/ordinance_s"
-        android:gravity="top"
-        />
+    android:id="@+id/ordinance_s"
+    android:layout_width="329dp"
+    android:layout_height="47dp"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="42dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="487dp"
+    android:text="@string/ordinance_s"
+    android:textAppearance="@style/ordinance_s"
+    android:gravity="top"
+    />
 
     <TextView
         android:id="@+id/eqis_reader"

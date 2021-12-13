@@ -17,7 +17,7 @@ public class APIClient {
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://ec2-3-144-120-159.us-east-2.compute.amazonaws.com:4000/")
+                .baseUrl("http://161.97.137.187:83/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

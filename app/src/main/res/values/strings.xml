@@ -50,4 +50,11 @@
     <string name="str_todo">TODO</string>
     <string name="str_read_with_nfc_card_t">Read with NFC Card</string>
     <string name="str_ttap_your_credit_card_on_mobile_to_read">Tap your Credit Card on mobile to read</string>
+    <string name="ordinance_s">Ordinance System</string>
+    <string name="eqis_reader">EQIS Reader</string>
+    <string name="email">Email</string>
+    <string name="xyz_gmail_c">xyz@gmail.com</string>
+    <string name="password">Password</string>
+    <string name="some_id">*****************</string>
+
 </resources>

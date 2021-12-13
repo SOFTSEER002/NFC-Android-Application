@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".Activities.LoginActivity">
+
+    <View
+        android:id="@+id/px_nigerian"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-4dp"
+        android:background="@drawable/logo"
+        />
+
+    <TextView
+        android:id="@+id/ordinance_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/px_nigerian"
+        android:text="@string/ordinance_s"
+        android:textAppearance="@style/ordinance_s"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/eqis_reader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ordinance_s"
+        android:text="@string/eqis_reader"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/eqis_reader"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/eqis_reader"
+        android:layout_marginTop="35sp"
+        android:text="@string/email"
+        android:textAppearance="@style/email"
+        android:gravity="top"
+        />
+
+
+
+    <EditText
+        android:id="@+id/edt_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="15sp"
+        android:hint="@string/xyz_gmail_c"
+        android:paddingLeft="11dp"
+        android:paddingTop="9dp"
+        android:textSize="28sp"
+        android:textAppearance="@style/xyz_gmail_c"
+        android:gravity="top"
+        android:background="@drawable/rectangle_1"
+        />
+
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/edt_user"
+        android:layout_marginTop="10sp"
+        android:text="@string/password"
+        android:textAppearance="@style/password"
+        android:gravity="top"
+        />
+
+
+    <EditText
+        android:id="@+id/edt_pass"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="15sp"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:hint="@string/some_id"
+        android:textAppearance="@style/some_id"
+        android:inputType="textPassword"
+        android:background="@drawable/rectangle_1"
+        android:paddingTop="12dp"
+        android:paddingLeft="12dp"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tenant Id"
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/edt_pass"
+        android:textSize="18sp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/txt_tenantid"/>
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="243dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="86dp"
+        android:layout_below="@+id/edt_pass"
+        android:layout_marginTop="45sp"
+        android:textColor="#121212"
+        android:text="Login"
+        android:background="@drawable/rectangle_2"
+        android:elevation="10dp"
+        />
+
+
+
+
+</RelativeLayout>

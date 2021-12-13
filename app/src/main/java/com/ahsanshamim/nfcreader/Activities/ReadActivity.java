@@ -256,7 +256,7 @@ public class ReadActivity extends Activity {
                             ndefMessages[i] = (NdefMessage) messages[i];
                         }
                         NdefRecord record = ndefMessages[0].getRecords()[0];
-
+                        Toast.makeText(getApplicationContext(), new String(record.getId()),Toast.LENGTH_LONG).show();
                         byte[] payload = record.getPayload();
                         String text = new String(payload);
 

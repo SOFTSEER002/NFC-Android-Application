@@ -18,9 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NFCReader"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.ProductViewActivity"
-            android:exported="true"
+        <activity android:name=".Activities.LoginScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".Activities.ProductViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.WriteProductActivity"
             android:exported="true"
@@ -54,8 +60,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
