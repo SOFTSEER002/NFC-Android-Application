@@ -19,6 +19,11 @@ public class AuthRepository {
     private String TAG = AuthRepository.class.getSimpleName();
     public AuthListener authListener;
 
+    /**
+     * Login user
+     * @param simpleLogin
+     * @param tenId
+     */
     public void loginUser(SimpleLogin simpleLogin, int tenId) {
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
         Call<UserData> call = apiInterface.loginUser(tenId, simpleLogin);
