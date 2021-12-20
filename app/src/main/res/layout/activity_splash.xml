@@ -1,45 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@drawable/bg"
     android:layout_height="match_parent">
 
     <View
+        android:layout_centerInParent="true"
         android:id="@+id/px_nigerian"
         android:layout_width="275dp"
         android:layout_height="263dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="71dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="161dp"
         android:background="@drawable/logo"
         />
-
-    <TextView
-        android:id="@+id/ordinance_s"
-        android:layout_width="329dp"
-        android:layout_height="47dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="42dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="487dp"
-        android:text="@string/ordinance_s"
-        android:textAppearance="@style/ordinance_s"
-        android:gravity="top"
-        />
-
-    <TextView
-        android:id="@+id/eqis_reader"
-        android:layout_width="224dp"
-        android:layout_height="47dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="97dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="556dp"
-        android:text="@string/eqis_reader"
-        android:textAppearance="@style/eqis_reader"
-        android:gravity="top"
-        />
-
 
 </RelativeLayout>
