@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.ahsanshamim.nfcreader.R;
+import com.ahsanshamim.nfcreader.utils.CustomLoader;
 
 public class SplashActivity extends AppCompatActivity {
     public static final String TAG = SplashActivity.class.getSimpleName();
@@ -18,10 +19,10 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        new Handler().postDelayed(new Runnable() {
+      new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
+                //* Create an Intent that will start the Menu-Activity. *//*
                 Intent i = new Intent(context, LoginScreenActivity.class);
                 startActivity(i);
                 finish();
