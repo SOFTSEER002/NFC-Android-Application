@@ -13,7 +13,7 @@
     <color name="colorPrimary">#143F64</color>
     <color name="colorPrimaryDark">#0A2642</color>
     <color name="colorAccent">#FF9800</color>
-    <color name="colorAccent_trans">#BAFF9800</color>
+    <color name="colorAccent_trans">#48FFE57F</color>
 
 
     <array name="dot_colors">
