@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NFC Reader</string>
+    <string name="app_name">EQIS INTEL-Lite</string>
 
     <string name="repoUrl">https://github.com/pro100svitlo/Credit-Card-NFC-Reader#questions-and-help</string>
     <string name="tv_noNfc">There is no NFC module on this device</string>

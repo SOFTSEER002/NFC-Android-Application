@@ -7,7 +7,7 @@ android {
     buildToolsVersion "32.0.0"
 
     defaultConfig {
-        applicationId "com.ahsanshamim.nfcreader"
+        applicationId "com.softseer.EQIS.INTEL.M"
         minSdkVersion 16
         targetSdkVersion 32
         versionCode 1
@@ -51,6 +51,8 @@ dependencies {
 
     implementation 'com.orhanobut:logger:2.2.0'
 
+    // Aniamtion
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
 
 }

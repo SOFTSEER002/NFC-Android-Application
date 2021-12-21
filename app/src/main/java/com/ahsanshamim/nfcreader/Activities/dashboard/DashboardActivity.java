@@ -4,12 +4,14 @@ import static com.ahsanshamim.nfcreader.utils.SystemUtils.setWindowFlag;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.ahsanshamim.nfcreader.Activities.profile.ProfileScannerActivity;
 import com.ahsanshamim.nfcreader.R;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -30,7 +32,8 @@ public class DashboardActivity extends AppCompatActivity {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
-
-
+    }
+    public void openProfileScanner(View view){
+        startActivity(new Intent(getApplicationContext(), ProfileScannerActivity.class));
     }
 }
