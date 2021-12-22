@@ -17,16 +17,15 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface APIInterface {
 
-
-    @POST("services/app/Session/GetCurrentLoginInformations")
-    Call<CurrentSessionModel> checkCurrentSession(@Header("Authorization") String authorization,
-                                                  SessionRequest SessionRequest);
+    @GET("services/app/Session/GetCurrentLoginInformations")
+    Call<CurrentSessionModel> checkCurrentSession(@Header("Authorization") String authorization);
 
     @POST("TokenAuth/Authenticate")
     Call<UserData> loginUser(@Header("Abp.TenantId") int tenanId, @Body SimpleLogin simpleLogin);

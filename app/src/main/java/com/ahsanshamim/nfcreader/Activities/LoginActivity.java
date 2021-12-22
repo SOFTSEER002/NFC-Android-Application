@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
     TextView txt_tenantid;
     CustomLoader customLoader;
     SharePref sharePref;
-    int id = 0;
+    int id = 3;
     AuthRepository authRepository;
 
     @Override

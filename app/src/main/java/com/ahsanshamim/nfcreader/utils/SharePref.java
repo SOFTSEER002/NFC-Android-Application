@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.ahsanshamim.nfcreader.Models.auth.LoginData;
+import com.ahsanshamim.nfcreader.Models.auth.UserData;
 import com.google.gson.Gson;
+import com.orhanobut.logger.Logger;
 
 public class SharePref {
     private Context context;
@@ -20,11 +22,12 @@ public class SharePref {
     public void saveLogindata(String data){
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(LOGIN_USER,data);
+        editor.commit();
     }
-    public LoginData getUserLoginData(){
+    public UserData getUserLoginData(){
         String data = sharedPreferences.getString(LOGIN_USER,"");
         if(!data.isEmpty()){
-            return  new Gson().fromJson(data,LoginData.class);
+            return  new Gson().fromJson(data, UserData.class);
         }
         return null;
     }

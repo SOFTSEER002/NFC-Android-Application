@@ -21,4 +21,76 @@ public class SubHeader {
     public boolean enableSecondary;
     @SerializedName("hoverableAside")
     public boolean hoverableAside;
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getAsideSkin() {
+        return asideSkin;
+    }
+
+    public void setAsideSkin(String asideSkin) {
+        this.asideSkin = asideSkin;
+    }
+
+    public boolean isFixedAside() {
+        return fixedAside;
+    }
+
+    public void setFixedAside(boolean fixedAside) {
+        this.fixedAside = fixedAside;
+    }
+
+    public boolean isAllowAsideMinimizing() {
+        return allowAsideMinimizing;
+    }
+
+    public void setAllowAsideMinimizing(boolean allowAsideMinimizing) {
+        this.allowAsideMinimizing = allowAsideMinimizing;
+    }
+
+    public boolean isDefaultMinimizedAside() {
+        return defaultMinimizedAside;
+    }
+
+    public void setDefaultMinimizedAside(boolean defaultMinimizedAside) {
+        this.defaultMinimizedAside = defaultMinimizedAside;
+    }
+
+    public String getSubmenuToggle() {
+        return submenuToggle;
+    }
+
+    public void setSubmenuToggle(String submenuToggle) {
+        this.submenuToggle = submenuToggle;
+    }
+
+    public boolean isSearchActive() {
+        return searchActive;
+    }
+
+    public void setSearchActive(boolean searchActive) {
+        this.searchActive = searchActive;
+    }
+
+    public boolean isEnableSecondary() {
+        return enableSecondary;
+    }
+
+    public void setEnableSecondary(boolean enableSecondary) {
+        this.enableSecondary = enableSecondary;
+    }
+
+    public boolean isHoverableAside() {
+        return hoverableAside;
+    }
+
+    public void setHoverableAside(boolean hoverableAside) {
+        this.hoverableAside = hoverableAside;
+    }
 }
