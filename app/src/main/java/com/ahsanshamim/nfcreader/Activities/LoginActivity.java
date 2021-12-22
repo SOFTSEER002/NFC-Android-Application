@@ -31,6 +31,8 @@ import com.ahsanshamim.nfcreader.RetrofitAPI.APIClient;
 import com.ahsanshamim.nfcreader.RetrofitAPI.APIInterface;
 import com.ahsanshamim.nfcreader.listener.auth.AuthListener;
 import com.ahsanshamim.nfcreader.utils.CustomLoader;
+import com.ahsanshamim.nfcreader.utils.SharePref;
+import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
 import retrofit2.Call;
@@ -43,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
     APIInterface apiInterface;
     TextView txt_tenantid;
     CustomLoader customLoader;
-
+    SharePref sharePref;
     int id = 0;
     AuthRepository authRepository;
 
@@ -51,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sharePref = new SharePref(getApplicationContext());
         //make translucent statusBar on kitkat devices
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
@@ -183,6 +186,7 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
     public void onSuccessfully(UserData userData) {
         customLoader.dismiss();
         Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
+        sharePref.saveLogindata(new Gson().toJson(userData));
         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
         finish();
     }

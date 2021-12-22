@@ -9,6 +9,9 @@ import com.ahsanshamim.nfcreader.Models.getproductsInfo;
 import com.ahsanshamim.nfcreader.Models.istenant_body;
 import com.ahsanshamim.nfcreader.Models.iteminfoP;
 import com.ahsanshamim.nfcreader.Models.responseproduct;
+import com.ahsanshamim.nfcreader.Models.session.CurrentSessionModel;
+import com.ahsanshamim.nfcreader.Models.session.SendSessionRequest;
+import com.ahsanshamim.nfcreader.Models.session.SessionRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -20,6 +23,10 @@ import retrofit2.http.Query;
 
 public interface APIInterface {
 
+
+    @POST("services/app/Session/GetCurrentLoginInformations")
+    Call<CurrentSessionModel> checkCurrentSession(@Header("Authorization") String authorization,
+                                                  SessionRequest SessionRequest);
 
     @POST("TokenAuth/Authenticate")
     Call<UserData> loginUser(@Header("Abp.TenantId") int tenanId, @Body SimpleLogin simpleLogin);

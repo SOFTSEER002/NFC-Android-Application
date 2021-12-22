@@ -54,5 +54,7 @@ dependencies {
     // Aniamtion
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
+    // Fency Toast
+    implementation 'io.github.shashank02051997:FancyToast:2.0.1'
 
 }
