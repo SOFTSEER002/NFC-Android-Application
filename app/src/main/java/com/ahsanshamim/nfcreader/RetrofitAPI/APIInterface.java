@@ -8,6 +8,7 @@ import com.ahsanshamim.nfcreader.Models.getproductinfo;
 import com.ahsanshamim.nfcreader.Models.getproductsInfo;
 import com.ahsanshamim.nfcreader.Models.istenant_body;
 import com.ahsanshamim.nfcreader.Models.iteminfoP;
+import com.ahsanshamim.nfcreader.Models.items.ItemResponse;
 import com.ahsanshamim.nfcreader.Models.responseproduct;
 import com.ahsanshamim.nfcreader.Models.session.CurrentSessionModel;
 import com.ahsanshamim.nfcreader.Models.session.SendSessionRequest;
@@ -24,6 +25,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface APIInterface {
+
+    @GET("services/app/User/GetUserForEdit")
+    Call<ItemResponse> getAllItems(@Header("Authorization") String authorization);
+
 
     @GET("services/app/User/GetUserForEdit")
     Call<UserDetailsResponse> getUserDetails(@Header("Authorization") String authorization, @Query("ID") int id);
