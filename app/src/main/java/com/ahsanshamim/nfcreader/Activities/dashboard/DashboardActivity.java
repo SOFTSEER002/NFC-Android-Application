@@ -18,27 +18,29 @@ import com.ahsanshamim.nfcreader.Models.auth.LoginData;
 import com.ahsanshamim.nfcreader.Models.auth.UserData;
 import com.ahsanshamim.nfcreader.Models.session.CurrentSessionModel;
 import com.ahsanshamim.nfcreader.Models.session.SessionRequest;
+import com.ahsanshamim.nfcreader.Models.user.UserDetailsResponse;
 import com.ahsanshamim.nfcreader.R;
 import com.ahsanshamim.nfcreader.Repository.SessionRepository;
+import com.ahsanshamim.nfcreader.Repository.user.UserDetailsRepository;
 import com.ahsanshamim.nfcreader.listener.session.SessionListener;
+import com.ahsanshamim.nfcreader.listener.user.UserDetailsListener;
 import com.ahsanshamim.nfcreader.utils.CustomLoader;
 import com.ahsanshamim.nfcreader.utils.SharePref;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
-public class DashboardActivity extends AppCompatActivity implements SessionListener {
+public class DashboardActivity extends AppCompatActivity implements SessionListener, UserDetailsListener {
 
     SharePref sharePref;
     SessionRepository sessionRepository;
+    UserDetailsRepository userDetailsRepository;
     CustomLoader customLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        FancyToast.makeText(this,"Please wait.verifying user session",FancyToast.LENGTH_LONG,FancyToast.WARNING,false);
-
         //make translucent statusBar on kitkat devices
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
@@ -54,6 +56,8 @@ public class DashboardActivity extends AppCompatActivity implements SessionListe
         setXML();
     }
     private void setXML(){
+        FancyToast.makeText(this,"Please wait.verifying user session...",
+            FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
         sharePref = new SharePref(getApplicationContext());
         sessionRepository = new SessionRepository();
         sessionRepository.sessionListener  = this;
@@ -74,13 +78,35 @@ public class DashboardActivity extends AppCompatActivity implements SessionListe
 
     @Override
     public void onSuccessSession(CurrentSessionModel currentSessionModel) {
-        customLoader.dismiss();
+        FancyToast.makeText(this,"Fetching user details.Please Wait...",
+            FancyToast.LENGTH_LONG,FancyToast.WARNING,false).show();
+        UserData userData = sharePref.getUserLoginData();
+        Logger.v(new Gson().toJson(userData));
+        LoginData result = userData.getResult();
+        userDetailsRepository = new UserDetailsRepository();
+        userDetailsRepository.userDetailsListener = this;
+        userDetailsRepository.verifyUserSession(result.getToken(),result.getUserId());
     }
 
     @Override
     public void onFailureSession(String message) {
         customLoader.dismiss();
-        FancyToast.makeText(this,message,FancyToast.LENGTH_LONG,FancyToast.ERROR,false);
+        FancyToast.makeText(this,message,FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();;
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
+    @Override
+    public void onSuccessUserDetails(UserDetailsResponse userDetailsResponse) {
+        customLoader.dismiss();
+        FancyToast.makeText(this,"User verified successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();;
+
+    }
+
+    @Override
+    public void onFailureUserDetails(String message) {
+        customLoader.dismiss();
+        FancyToast.makeText(this,message,FancyToast.LENGTH_LONG,FancyToast.ERROR,false).show();
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }

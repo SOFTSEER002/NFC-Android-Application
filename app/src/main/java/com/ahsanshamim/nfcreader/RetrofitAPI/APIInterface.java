@@ -12,6 +12,7 @@ import com.ahsanshamim.nfcreader.Models.responseproduct;
 import com.ahsanshamim.nfcreader.Models.session.CurrentSessionModel;
 import com.ahsanshamim.nfcreader.Models.session.SendSessionRequest;
 import com.ahsanshamim.nfcreader.Models.session.SessionRequest;
+import com.ahsanshamim.nfcreader.Models.user.UserDetailsResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -23,6 +24,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface APIInterface {
+
+    @GET("services/app/User/GetUserForEdit")
+    Call<UserDetailsResponse> getUserDetails(@Header("Authorization") String authorization, @Query("ID") int id);
 
     @GET("services/app/Session/GetCurrentLoginInformations")
     Call<CurrentSessionModel> checkCurrentSession(@Header("Authorization") String authorization);

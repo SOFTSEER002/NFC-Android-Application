@@ -23,7 +23,7 @@ public class SessionRepository {
             @Override
             public void onResponse(Call<CurrentSessionModel> call, Response<CurrentSessionModel> response) {
                 CurrentSessionModel data = response.body();
-                Logger.e(TAG + " " + data);
+                Logger.e(TAG + " " + response.body());
 
                 if(data.getResult().getUser()!=null){
                     sessionListener.onSuccessSession(data);
