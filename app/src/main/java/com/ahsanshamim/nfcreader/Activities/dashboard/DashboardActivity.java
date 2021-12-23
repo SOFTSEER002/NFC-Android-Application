@@ -99,6 +99,7 @@ public class DashboardActivity extends AppCompatActivity implements SessionListe
     @Override
     public void onSuccessUserDetails(UserDetailsResponse userDetailsResponse) {
         customLoader.dismiss();
+        sharePref.saveUserFullDetails(new Gson().toJson(userDetailsResponse));
         FancyToast.makeText(this,"User verified successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();;
 
     }
