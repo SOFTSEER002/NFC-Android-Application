@@ -29,6 +29,7 @@ import com.ahsanshamim.nfcreader.Repository.user.UserDetailsRepository;
 import com.ahsanshamim.nfcreader.listener.encrypt.EncryptListener;
 import com.ahsanshamim.nfcreader.listener.session.SessionListener;
 import com.ahsanshamim.nfcreader.listener.user.UserDetailsListener;
+import com.ahsanshamim.nfcreader.roomdatabase.init.DatabaseClient;
 import com.ahsanshamim.nfcreader.roomdatabase.model.SQLEncryptionModel;
 import com.ahsanshamim.nfcreader.utils.CustomLoader;
 import com.ahsanshamim.nfcreader.utils.SharePref;
@@ -142,13 +143,48 @@ public class DashboardActivity extends AppCompatActivity implements SessionListe
 
     @Override
     public void onSuccessEncrypt(EncryptResponse encryptResponse) {
-        List<EncryptItem> encryptItemList =  encryptResponse.getResult().getItems();
-        for (EncryptItem encryptItem : encryptItemList){
-            SQLEncryptionModel sqlEncryptionModel = new SQLEncryptionModel();
-            sqlEncryptionModel.setEncryption_id(encryptItem.getId());
-          //  sqlEncryptionModel.setTenantId(ec);
-        }
-        FancyToast.makeText(this,"User verified successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();;
+
+        //save data into room database
+        Thread thred = new Thread(() -> {
+            List<EncryptItem> encryptItemList =  encryptResponse.getResult().getItems();
+            for (EncryptItem encryptItem : encryptItemList){
+                SQLEncryptionModel sqlEncryptionModel = new SQLEncryptionModel();
+                sqlEncryptionModel.setKeyName(encryptItem.getKeyName());
+                sqlEncryptionModel.setKeyValue(encryptItem.getKeyValue());
+                sqlEncryptionModel.setAutoChangeValue(String.valueOf(encryptItem.isAutoChangeValue()));
+                sqlEncryptionModel.setSchedule(encryptItem.getSchedule());
+                sqlEncryptionModel.setIsActive(String.valueOf(encryptItem.isActive()));
+                sqlEncryptionModel.setEncryption_id(encryptItem.getId());
+                sqlEncryptionModel.setTenantId(encryptItem.getTenantId());
+                sqlEncryptionModel.setOrganizationUnitId(encryptItem.getOrganizationUnitId());
+                sqlEncryptionModel.setDeleted(encryptItem.isDeleted());
+                sqlEncryptionModel.setDeleterUserId(encryptItem.getDeleterUserId());
+                sqlEncryptionModel.setDeletionTime(encryptItem.getDeletionTime());
+                sqlEncryptionModel.setLastModificationTime(encryptItem.getLastModificationTime());
+                sqlEncryptionModel.setCreationTime(encryptItem.getCreationTime());
+                sqlEncryptionModel.setCreatorUserId(encryptItem.getCreatorUserId());
+
+
+                // Deleting old data
+                DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                    .taskDao()
+                    .removeAll();
+
+                //adding to database
+                DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                    .taskDao()
+                    .insert(sqlEncryptionModel);
+//
+//                List<SQLEncryptionModel> sqlEncryptionModels =  DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+//                    .taskDao()
+//                    .getAll();
+              //  Logger.v("DATA===>"+new Gson().toJson(sqlEncryptionModels));
+                runOnUiThread(() -> {
+                    FancyToast.makeText(getApplicationContext(),"User verified successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();;
+                });
+            }
+        });
+        thred.start();
         customLoader.dismiss();
     }
 

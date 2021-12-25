@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         sharePref = new SharePref(getApplicationContext());
-        try {
+       /* try {
             String data = SimpleCrypto.decrypt("1234123456789878".getBytes(),"vb67+UWjMUyOurITxmYhHg==");
            // String data =decryptMsg(Base64.encodeToString(Base64.decode(, Base64.DEFAULT), Base64.DEFAULT).getBytes(), generateKey("3232575943671488"));
             //String data = decrypt("vb67+UWjMUyOurITxmYhHg==","3232575943671488");
@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
         }
         catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
        // String data = decrypt("vb67+UWjMUyOurITxmYhHg==","1234123456789878");
         //Logger.w("DECRYPT:  "+data);
         //make translucent statusBar on kitkat devices
