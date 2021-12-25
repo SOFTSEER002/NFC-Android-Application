@@ -20,6 +20,13 @@
         android:theme="@style/Theme.NFCReader"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activities.item.ItemDetailsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            >
+
+        </activity>
+        <activity
             android:name=".Activities.item.ItemListActivity"
             android:exported="false" />
         <activity
@@ -33,7 +40,7 @@
         <activity
             android:name=".Activities.dashboard.DashboardActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.LoginScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

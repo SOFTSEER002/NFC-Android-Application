@@ -37,5 +37,6 @@
 
     <color name="nfcblue">#8180FD</color>
     <color name="line_color">#BCFF43</color>
+    <color name="text_highlight">#09E112</color>
     <color name="app_color">#BCFF43</color>
 </resources>

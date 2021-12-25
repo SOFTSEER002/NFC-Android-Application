@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import java.util.List;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
     private Context context;
     List<Item> itemList;
+    public ItemClickHandler itemClickHandler;
 
     public ItemAdapter(Activity context, List<Item> itemList){
         this.context = context;
@@ -62,6 +64,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             //String data = decrypt("vb67+UWjMUyOurITxmYhHg==","3232575943671488");
         });
         t.start();
+        holder.view_details.setOnClickListener(v->{
+            itemClickHandler.onClickItem(item);
+        });
     }
 
     @Override
@@ -71,11 +76,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{
         public TextView item_name,details;
+        public LinearLayout view_details;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             item_name = itemView.findViewById(R.id.item_name);
             details = itemView.findViewById(R.id.details);
+            view_details = itemView.findViewById(R.id.view_details);
         }
     }
 
+    public  interface ItemClickHandler{
+        void onClickItem(Item item);
+    }
 }
