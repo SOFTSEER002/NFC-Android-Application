@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="black_transparent">#65000000</color>
     <color name="black_les_transparent">#C9000000</color>
+    <color name="gray_lite">#C9BFBFBF</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#143F64</color>
@@ -35,4 +36,5 @@
 
     <color name="nfcblue">#8180FD</color>
     <color name="line_color">#BCFF43</color>
+    <color name="app_color">#BCFF43</color>
 </resources>

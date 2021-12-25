@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -29,11 +30,31 @@ import com.ahsanshamim.nfcreader.R;
 import com.ahsanshamim.nfcreader.Repository.AuthRepository;
 import com.ahsanshamim.nfcreader.RetrofitAPI.APIClient;
 import com.ahsanshamim.nfcreader.RetrofitAPI.APIInterface;
+import com.ahsanshamim.nfcreader.Settings.CipherConstraints;
+import com.ahsanshamim.nfcreader.Settings.EncryptDecrypt;
 import com.ahsanshamim.nfcreader.listener.auth.AuthListener;
 import com.ahsanshamim.nfcreader.utils.CustomLoader;
 import com.ahsanshamim.nfcreader.utils.SharePref;
+import com.ahsanshamim.nfcreader.utils.SimpleCrypto;
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
+
+import java.io.UnsupportedEncodingException;
+import java.security.AlgorithmParameters;
+import java.security.GeneralSecurityException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.InvalidParameterSpecException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,6 +75,17 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         sharePref = new SharePref(getApplicationContext());
+        try {
+            String data = SimpleCrypto.decrypt("1234123456789878".getBytes(),"vb67+UWjMUyOurITxmYhHg==");
+           // String data =decryptMsg(Base64.encodeToString(Base64.decode(, Base64.DEFAULT), Base64.DEFAULT).getBytes(), generateKey("3232575943671488"));
+            //String data = decrypt("vb67+UWjMUyOurITxmYhHg==","3232575943671488");
+            Logger.w("DECRYPT:  "+data);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+       // String data = decrypt("vb67+UWjMUyOurITxmYhHg==","1234123456789878");
+        //Logger.w("DECRYPT:  "+data);
         //make translucent statusBar on kitkat devices
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
@@ -196,4 +228,26 @@ public class LoginActivity extends AppCompatActivity implements AuthListener {
         customLoader.dismiss();
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
+
+    public static SecretKey generateKey(String password)
+        throws NoSuchAlgorithmException, InvalidKeySpecException
+    {
+        return new SecretKeySpec(password.getBytes(), "AES");
+    }
+
+    public static byte[] encryptMsg(String message, SecretKey secret)
+        throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, InvalidParameterSpecException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException
+    {
+        /* Encrypt the message. */
+        Cipher cipher = null;
+        cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+        cipher.init(Cipher.ENCRYPT_MODE, secret);
+        byte[] cipherText = cipher.doFinal(message.getBytes("UTF-8"));
+        return cipherText;
+    }
+
+
+
+
+
 }

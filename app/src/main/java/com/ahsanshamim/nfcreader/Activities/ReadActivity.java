@@ -309,9 +309,7 @@ public class ReadActivity extends Activity {
 
     public String decrypt(String ciphertext, String password) {
         String[] fields = ciphertext.split(CipherConstraints.DELIMITER);
-        if(fields.length != 3) {
-            throw new IllegalArgumentException("Invalid encypted text format");
-        }
+
         byte[] salt        = EncryptDecrypt.fromBase64(fields[0]);
         byte[] iv          = EncryptDecrypt.fromBase64(fields[1]);
         byte[] cipherBytes = EncryptDecrypt.fromBase64(fields[2]);
@@ -320,7 +318,7 @@ public class ReadActivity extends Activity {
         try {
             Cipher cipher = Cipher.getInstance(CipherConstraints.CIPHER_ALGORITHM);
             IvParameterSpec ivParams = new IvParameterSpec(iv);
-            cipher.init(Cipher.DECRYPT_MODE, key, ivParams);
+            cipher.init(Cipher.DECRYPT_MODE, key);
             byte[] plaintext = cipher.doFinal(cipherBytes);
             return new String(plaintext, "UTF-8");
         } catch (GeneralSecurityException e) {

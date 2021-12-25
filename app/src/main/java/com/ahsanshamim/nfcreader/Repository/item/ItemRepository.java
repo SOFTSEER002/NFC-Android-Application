@@ -25,9 +25,9 @@ public class ItemRepository {
             @Override
             public void onResponse(Call<ItemResponse> call, Response<ItemResponse> response) {
                 ItemResponse data = response.body();
-                Logger.e(TAG + " " + data);
+                Logger.e(TAG + " " + response.body());
 
-                if(data.getResult()!=null){
+                if(data.getResult().getTotalCount()>0){
                     itemListener.onSuccessItem(data);
                 }else{
                     itemListener.onFailureItem("No item found");

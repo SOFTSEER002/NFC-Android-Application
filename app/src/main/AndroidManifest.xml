@@ -20,10 +20,12 @@
         android:theme="@style/Theme.NFCReader"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Activities.item.ItemListActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.profile.ProfileDetailsActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.profile.ProfileScannerActivity"
             android:exported="false"
@@ -31,8 +33,7 @@
         <activity
             android:name=".Activities.dashboard.DashboardActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".Activities.LoginScreenActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -51,7 +52,6 @@
             android:name=".Activities.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +69,7 @@
         <activity
             android:name=".Activities.ReadActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.HomeActivity"
             android:exported="true"
