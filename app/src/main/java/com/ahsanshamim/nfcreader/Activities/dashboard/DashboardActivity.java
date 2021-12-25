@@ -174,11 +174,11 @@ public class DashboardActivity extends AppCompatActivity implements SessionListe
                 DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
                     .taskDao()
                     .insert(sqlEncryptionModel);
-//
-//                List<SQLEncryptionModel> sqlEncryptionModels =  DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
-//                    .taskDao()
-//                    .getAll();
-              //  Logger.v("DATA===>"+new Gson().toJson(sqlEncryptionModels));
+
+                List<SQLEncryptionModel> sqlEncryptionModels =  DatabaseClient.getInstance(getApplicationContext()).getAppDatabase()
+                    .taskDao()
+                    .getAll();
+                Logger.v("DATA===>"+new Gson().toJson(sqlEncryptionModels));
                 runOnUiThread(() -> {
                     FancyToast.makeText(getApplicationContext(),"User verified successfully",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,false).show();;
                 });

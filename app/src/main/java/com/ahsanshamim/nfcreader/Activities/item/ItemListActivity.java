@@ -49,7 +49,6 @@ public class ItemListActivity extends AppCompatActivity implements ItemListener 
         Logger.v(new Gson().toJson(userData));
         LoginData result = userData.getResult();
         customLoader.showProgressDialog();
-
         // Hit api for get all item
         itemRepository.getAllItems(result.getToken());
 
@@ -57,7 +56,7 @@ public class ItemListActivity extends AppCompatActivity implements ItemListener 
 
     @Override
     public void onSuccessItem(ItemResponse itemResponse) {
-        itemAdapter = new ItemAdapter(getApplicationContext(),itemResponse.getResult().getItems());
+        itemAdapter = new ItemAdapter(ItemListActivity.this,itemResponse.getResult().getItems());
         recycle_list_item.setAdapter(itemAdapter);
         customLoader.dismiss();
     }
