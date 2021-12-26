@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.ahsanshamim.nfcreader.Activities.LoginActivity;
 import com.ahsanshamim.nfcreader.Activities.item.ItemListActivity;
+import com.ahsanshamim.nfcreader.Activities.item.ItemMenusActivity;
 import com.ahsanshamim.nfcreader.Activities.profile.ProfileScannerActivity;
 import com.ahsanshamim.nfcreader.Models.auth.LoginData;
 import com.ahsanshamim.nfcreader.Models.auth.UserData;
@@ -103,10 +104,9 @@ public class DashboardActivity extends AppCompatActivity implements SessionListe
         startActivity(new Intent(getApplicationContext(), ProfileScannerActivity.class));
     }
 
-    public void openItemActivity(View view){
-        startActivity(new Intent(getApplicationContext(), ItemListActivity.class));
+    public void openItemMenusActivity(View view){
+        startActivity(new Intent(getApplicationContext(), ItemMenusActivity.class));
     }
-
     @Override
     public void onSuccessSession(CurrentSessionModel currentSessionModel) {
         FancyToast.makeText(this,"Fetching user details.Please Wait...",

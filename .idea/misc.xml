@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/drawable/clock_rotate.xml" value="0.2755208333333333" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/drawable/ic_big_button_frame.xml" value="0.2755208333333333" />
+        <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_candiate_menu.xml" value="0.152" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_item_details.xml" value="0.264" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_item_list.xml" value="0.2151268115942029" />
+        <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_item_menus.xml" value="0.21920289855072464" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_login.xml" value="0.136" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_login_screen.xml" value="0.1793478260869565" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
