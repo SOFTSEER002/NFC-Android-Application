@@ -7,7 +7,7 @@
     android:scrollbars="none"
     android:fillViewport="true"
     android:layout_height="match_parent"
-    tools:context=".Activities.dashboard.DashboardActivity">
+    tools:context=".Activities.item.ItemMenusActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -49,7 +49,6 @@
                     </TextView>
                 </LinearLayout>
                 <LinearLayout
-                    android:onClick="openProfileScanner"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -94,7 +93,7 @@
                     </TextView>
                 </LinearLayout>
                 <LinearLayout
-
+                    android:id="@+id/item_list_layout"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"

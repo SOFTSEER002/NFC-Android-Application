@@ -37,7 +37,6 @@ public class ItemListActivity extends AppCompatActivity implements ItemListener,
     }
     private  void setXML(){
         recycle_list_item = findViewById(R.id.recycle_list_item);
-
         // Set layout type recycleview
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recycle_list_item.setLayoutManager(layoutManager);
