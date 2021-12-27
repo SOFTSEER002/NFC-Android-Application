@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/drawable/clock_rotate.xml" value="0.2755208333333333" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/drawable/ic_big_button_frame.xml" value="0.2755208333333333" />
+        <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/drawable/ic_splus.xml" value="0.2755208333333333" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_candiate_menu.xml" value="0.152" />
+        <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_candidate_list.xml" value="0.152" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_item_details.xml" value="0.264" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_item_list.xml" value="0.2151268115942029" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_item_menus.xml" value="0.21920289855072464" />
@@ -22,6 +24,7 @@
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_profile_scanner.xml" value="0.176" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/activity_write_product.xml" value="0.153125" />
+        <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/candidate_list.xml" value="0.264" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/clock_rotate.xml" value="0.259375" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/item_list.xml" value="0.2" />
         <entry key="..\:/g/pet/NFC-Android-Application/app/src/main/res/layout/item_lit.xml" value="0.18854166666666666" />

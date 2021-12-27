@@ -20,13 +20,16 @@
         android:theme="@style/Theme.NFCReader"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Activities.candidate.CandiateMenuActivity"
+            android:name=".Activities.candidate.CandidateListActivity"
             android:exported="false" />
+        <activity
+            android:name=".Activities.candidate.CandiateMenuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.item.ItemMenusActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activities.item.ItemDetailsActivity"
             android:exported="true"

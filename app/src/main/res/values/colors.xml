@@ -10,12 +10,14 @@
     <color name="black_transparent">#65000000</color>
     <color name="black_les_transparent">#C9000000</color>
     <color name="gray_lite">#C9BFBFBF</color>
+    <color name="gray_500">#C9E1E1E1</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorPrimary">#143F64</color>
     <color name="colorPrimaryDark">#0A2642</color>
     <color name="colorAccent">#FF9800</color>
     <color name="colorAccent_trans">#48FFE57F</color>
+    <color name="lite_pink">#FF8E8E</color>
 
 
     <array name="dot_colors">

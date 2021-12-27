@@ -4,6 +4,7 @@ import com.ahsanshamim.nfcreader.Models.IsTenantAvailable;
 import com.ahsanshamim.nfcreader.Models.auth.LoginData;
 import com.ahsanshamim.nfcreader.Models.auth.SimpleLogin;
 import com.ahsanshamim.nfcreader.Models.auth.UserData;
+import com.ahsanshamim.nfcreader.Models.candidate.CandidateResponse;
 import com.ahsanshamim.nfcreader.Models.encrypt.EncryptResponse;
 import com.ahsanshamim.nfcreader.Models.getproductinfo;
 import com.ahsanshamim.nfcreader.Models.getproductsInfo;
@@ -28,6 +29,10 @@ import retrofit2.http.Query;
 public interface APIInterface {
 
 
+
+
+    @GET("services/app/Candidate/GetAll")
+    Call<CandidateResponse> getAllCandidates(@Header("Authorization") String authorization, @Query("TenantId") int TenantId);
 
 
     @GET("services/app/Encryptionkey/GetAll")
