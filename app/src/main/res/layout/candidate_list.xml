@@ -7,7 +7,7 @@
     android:weightSum="1">
 
     <RelativeLayout
-        android:layout_weight="0.25"
+        android:layout_weight="0.3"
         android:layout_width="0dp"
         android:padding="10dp"
         android:layout_height="match_parent">
@@ -19,33 +19,34 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/profile"
                 android:scaleType="fitXY"
-                android:src="@drawable/sample"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
     <RelativeLayout
         android:padding="5dp"
-        android:layout_weight="0.75"
+        android:layout_weight="0.7"
         android:layout_width="0dp"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_alignParentEnd="true"
-            android:textColor="@color/lite_pink"
-            android:text="NG2737-9393"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true" />
 
         <TextView
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:text="Fakoya Emmanuel Ayomede"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="NG2737-9393"
+            android:textColor="@color/lite_pink" />
+
+        <TextView
+            android:id="@+id/candi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Fakoya Emmanuel Ayomede"
+            android:textColor="@color/white" />
         <View
             android:layout_centerInParent="true"
             android:background="@color/line_color"
